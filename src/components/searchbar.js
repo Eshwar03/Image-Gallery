@@ -13,7 +13,7 @@ const Searchbar = ({ searchText }) => {
       <form onSubmit={onSubmit}>
         <input
           type="text"
-          placeholder="  Search images"
+          placeholder="  Try searching cat.. "
           onChange={(event) => setSearch(event.target.value)}
         ></input>
         <button type="submit">Search</button>
