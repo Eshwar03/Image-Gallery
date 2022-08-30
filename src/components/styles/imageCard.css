@@ -1,0 +1,35 @@
+.imgContainer {
+  max-width: 500px;
+  box-shadow: 0px 0px 8px 2px gray;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgb(218, 232, 237);
+}
+.image {
+  width: 100%;
+}
+.info {
+  padding: 10px 10px;
+}
+.owner {
+  color: purple;
+  font-size: large;
+  font-weight: bold;
+}
+
+.insights {
+  list-style-type: none;
+  padding: unset;
+  font-size: medium;
+}
+
+.tags {
+  display: inline-block;
+  font-weight: 500;
+  background-color: rgb(246, 246, 246);
+  border-radius: 8px;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 3px;
+  font-size: 0.8em;
+}

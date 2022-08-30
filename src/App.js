@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState, useEffect } from "react";
+import ImageCard from "./components/imageCard";
+import Searchbar from "./components/searchbar";
+import "./App.css";
 function App() {
+  const [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [searchTerm, setsearchTerm] = useState("");
+
+  useEffect(() => {
+    fetch(
+      `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${searchTerm}&image_type=photo&pretty=true`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setImages(data.hits);
+        setIsLoading(false);
+      })
+      .catch((err) => console.log(err));
+  }, [searchTerm]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1 className="pageTitle">Image Gallery</h1>
+      <Searchbar searchText={(text) => setsearchTerm(text)} />
+      {isLoading ? (
+        <h1 className="load">Loading...</h1>
+      ) : (
+        <div className="grid">
+          {images.map((item) => (
+            <ImageCard key={item.id} image={item} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
