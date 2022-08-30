@@ -1,8 +1,8 @@
 # Project information;
 
-Project: Image gallery (searchable using a keyword)
-Type : Single Page
-Tech stack: ReactJs , Pixabay API
+Project: Image gallery (searchable using a keyword).
+Type : Single Page.
+Tech stack: ReactJs , Pixabay API.
 
 # Getting Started with Create React App
 
