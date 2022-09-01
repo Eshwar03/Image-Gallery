@@ -19,3 +19,10 @@ form button {
   background-color: rgb(15, 158, 158);
   cursor: pointer;
 }
+
+@media (max-width: 730px) {
+  form input {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
